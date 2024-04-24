@@ -58,6 +58,9 @@ class _MeuAppState extends State<MeuApp> {
                             onChanged: (value) {
                               setState(() {
                                 _tarefas[index].status = value ?? false;
+                                if (_tarefas[index].status) {
+                                  _tarefas.removeAt(index);
+                                }
                               });
                             },
                           ),
